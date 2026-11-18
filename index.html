@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ចុះឈ្មោះចូលរៀន - វិទ្យាស្ថានជាតិបណ្តុះបណ្តាលបច្ចេកទេស (NTTI)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Kantumruy Pro', 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(-45deg, #061822, #0b333d, #0d5c54, #0c3b5e, #08262c);
+            background-size: 400% 400%;
+            animation: auroraFlow 12s ease infinite;
+        }
+        .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        @keyframes auroraFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes blobFloat {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -40px) scale(1.1); }
+            66% { transform: translate(-25px, 25px) scale(0.95); }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.25), 0 20px 50px rgba(0, 0, 0, 0.5); }
+            50% { box-shadow: 0 0 42px rgba(6, 182, 212, 0.45), 0 20px 50px rgba(0, 0, 0, 0.5); }
+        }
+
+        @keyframes shimmerSweep {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .animate-blob { animation: blobFloat 8s infinite ease-in-out; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+        .card-glow { animation: borderGlow 4s ease-in-out infinite; }
+        
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+            transform: translateX(-100%);
+            animation: shimmerSweep 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4 flex flex-col items-center justify-center relative overflow-x-hidden">
+
+    <!-- Colorful Animated Floating Light Orbs -->
+    <div class="fixed top-10 left-10 w-72 h-72 bg-emerald-500/25 rounded-full blur-3xl animate-blob pointer-events-none"></div>
+    <div class="fixed bottom-10 right-10 w-80 h-80 bg-cyan-500/25 rounded-full blur-3xl animate-blob animation-delay-2000 pointer-events-none"></div>
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-400/15 rounded-full blur-3xl animate-blob animation-delay-4000 pointer-events-none"></div>
+
+    <!-- Top Badge / Info -->
+    <div class="absolute top-4 right-4 flex items-center gap-2 z-20">
+        <div class="bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-4 py-2 rounded-xl backdrop-blur-md border border-emerald-400/40 flex items-center gap-1.5 shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Cloud Live Sync Active (NTTI)</span>
+        </div>
+    </div>
+
+    <div class="max-w-xl w-full bg-white/95 backdrop-blur-xl rounded-3xl card-glow p-6 sm:p-10 relative z-10 border border-emerald-200/40 mt-8 transition-all duration-300">
+        
+        <!-- Header -->
+        <div class="text-center pb-6 mb-6 border-b border-slate-100 space-y-2">
+             <label title="ចុចដើម្បីដាក់រូប Logo សាលាពិត" >
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACUCAMAAAAj+tKkAAACClBMVEX/////6VL8/Pw3NTfz8/Pw8PD5+fr/61L/7VH29vft7e3q6urk5OTn5+fh4eFtYQDY19cAAAD/8FDJyMn/9E/Lp3MNsUv/6lj/9074/fr/6EvPz8+NjI2HTFAwsk+Ph4zAv8CijymfZBxoUg/HnBvKv8UcfTz/7W3//0sAAJ4AAJL/7GN8Yz12bjeRkIegn59/ch1vZBW/iiukNDL5Ig//7Hb/743/7YIAAIm1tLZ0ayiFeBqBVzNvbW5SUVKpmifJ6NAiTC7gRTz620P/9raCfGKLiXj/8ql9eFS
+                    fdVWvgYHkvTO8rzP/8pxeXV0bFxrFrXE6OpgAqS7PcnHqysnEPDfPvlPn0UHPujekprFOTIyRhmB1coMsLZU/OoCqpJZNSHr
+                    a0VtNAADk2lQ6AACdlV+nl1ZJSJdfKAWveCegYQBgWGe+s1UUnUUhXDP1k4+nn3/HvHWThjd5dWm2sohjW3rbyW4ZHJ7a0pAnK6O
+                    4tJqxpFXRzK0fF3BNQ2j17LxmYpQuK3sQDHqpbGJBKwBcKyS3kYSMcXJZPwZoQDR/KzT/3x6XWDB5QwDavZ5COQCwf0HAk3ORa
+                    gg9EgDasGHu0J93LwBiQkWOcTr21Ix3Eh9xFwV9PzOdUUZYMhO4m51ieWiKoY+hxK0AXx1PiWAzSjpRq21JcVQ8KkAOMBndXlL
+                    nNSq8V1KWEQClvWuzAAAgAElEQVR4nLV8i2MaZbo39xlCIHQYHRamCxgrSeeEIW5JMqUDrimkrYSEbz0M4ZIwHYHsB92FkiGNaEtat
+                    fXStVp1da12zx73ck79/sfveedCyLWtq68V0mYGfvPcn+d93sdgeP5lslnGXG4Px220V/MCrEVtoZ+FQqGQySRDoXg8Gp2YmJ1J
+                    pVmO87hdY1ab6Sd82fOjM9mtgG5tbaOTF3w+hqEoo9HnW/TtLaNRAQooASOAjM6kIizCaLWbfmmMQDyn28+xkY5EUeFwLMwgyiFMmB
+                    H+37eMvsVCAYGciMaj10sRNuh3Oyy/KBlNNqsTiMduiUYmPB8LUwgcwDIeszAMx41CIQmEjMdD19uIjM5fkNM2uwKvJzGx+fmwJCiEOx
+                    bdHkiEEXgdCoX67BpAtNt+CXQKc4NrGz0sNjcXowTg61PBjRBysQC8DiULrQ2Wc4//AlQ0WRxAvXaPQfBAbfGD6HCSJFQ5hBf46cDvMdwn
+                    ZIDPmUKvvRYEWfx5EZrsFpeHiyjwGAHJ3ehX4zhmJKRUtyVgGMGAepAtAod/P0BHHFssxOPJwmJvg/O4LPafDyJwd9zPbXQQPEkQCGL0q3GsVW9JRH6hUpluUFSzWxSN3emqKFdbOEaSPmLfswCnQ8lForPB+cd/PoW2WV2etS0xPDcnCoLRm+9LhPp9BAFkks9ObxeJcluS6tuM
+                    eFYqtsRUN3+pK/dwqsTLJUTMIb8xDEEs4PNbax4wiz8LPJPdCeTrMfMge8BDvFusVmqEEccJqd7HfNVBT6xt56vbsuTt9Mh8qkO0trc7zduyl6zl+PVtmcFxidojJObLABGZGyznd1p+Bn22WRD5pNjcvCQsYkY8v15Kp/I4JopSd7qE4025Sxkb+Vq6uIV3V0lCInCxw3fagZ2Yt1rsEOmdDsHvVuv4CEIhmRTCc2+vBV3/tjqDX3MHWUS+sKCYFVzcbUsMgVFyrtYtlXAyJS+IfM0rYmJJzqXxZrvMSLUuRni7eaIln
+                    50ScpkmXXp3u0wiq63xGSAWmLkbbNBt/fd0RWWvFJ6bFwCf8umE4MXElpSXeaa7vUN7ff2aVBl0GpX10taOLG5Luz2psdNtlda9eb4k1qup/O1dkShPU5KYH1IR92Uy0tzSxpp//N9BaLKP+9e2qBgox6Iu57jPVzu7K0nydrW1KpWxwrY8CGxXApWcONUD+SutUoT47vR0o0d0K93WdHuKyjd4Qtz15tcrIj7C54wwt/Q26/k3EJosriDboubnhuSDDxaKC3yt1icj7ZLkFaoCXtmRcb7jba3vrpf7BA7mDhSo0KNwYrVS6W/nUkVRTOH5GokxjaJXMZq6yRHmLr7DBl0/1Wgr+ERqhL3oc0tlPlU+u01heblWW68ShNiXwItIzWYpVW2SQ+MNvgTP97zFRmCn2CzJ7+ZxI95OecVWXiC0iwDhvIrwJ6kKqG8wQDFzsYIOj/B6CSxdq+6UV7sbU+np7ekG8AxHFgST5EpPrNwk9zkPIJckkRvbW72ddQkjvS1RamZ3coKuLD4BEN6iOffY85sbk83h5jaMzJyk4gP3gbfevZ3Gp7rFHtEqDkRSqvf2fApR48Vat3fAvQEIsl5ttMhyF5P4ZoqsTdO9yoDRBRoThNjFWxuc2/HcNLRZAZ/AgPFT8OH5rkikB+lqj6yW1uX++kILx8lRN0aQ0nSbOIgPIDSzqbPlvISLlVzeK5QrRHmn49WfDF/UED6vQQT5U/Dp4keUi2mmh+FkAG/T3Z08IUoHohkMb4FZHImnh0p1W8o3ivCbwADn5XLH2x/0+UZnyObFeQXh2HMBRPqxIVDzBUH7HlIUuxQBKJppL787ELA9x2CkKIADSUj/diqThJXJFAqCQGkBFyG1SLlaI8HEM2JFbhH1GtbliwM9IEIIbyGEz6PLYP+CtEDFCoL+KXW50gQ/TPQrlR4O/BrSzUgxOO
+                    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
+                    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" alt="" 
+                    class="relative w-12 h-12 rounded-full p-0.5  
+                  via-teal-500  shadow-md shrink-0 flex items-center justify-center animate-pulse-glow cursor-pointer group">
+                </label>
+            <h1 class="text-xl sm:text-2xl font-extrabold bg-gradient-to-r from-slate-900 via-teal-800 to-emerald-700 bg-clip-text text-transparent">ចុះឈ្មោះចូលរៀន ឆ្នាំសិក្សា ថ្មី</h1>
+            <p class="text-xs text-slate-500">វិទ្យាស្ថានជាតិបណ្តុះបណ្តាលបច្ចេកទេស (National Polytechnic Institute of Cambodia)</p>
+        </div>
+
+        <!-- Registration Form -->
+        <form onsubmit="submitStudentRegistration(event)" class="space-y-4 text-xs">
+            
+            <!-- Student Photo Upload Field -->
+            <div class="p-4 rounded-2xl bg-slate-50/90 border border-slate-200/80 flex flex-col sm:flex-row items-center gap-4">
+                <div class="relative shrink-0">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-200 border-2 border-emerald-500/50 overflow-hidden shadow-inner flex items-center justify-center bg-cover bg-center" id="photoPreviewBox" style="background-image: url('https://placehold.co/150x150/0f4c5c/ffffff?text=Photo');">
+                    </div>
+                    <span class="absolute -bottom-1 -right-1 w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-md">
+                        <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                    </span>
+                </div>
+                <div class="flex-1 w-full space-y-1.5 text-center sm:text-left">
+                    <label class="block font-bold text-slate-900">រូបថតផ្ទាល់ខ្លួនសិស្ស (Student Photo) </label>
+                    <p class="text-[11px] text-slate-500">សូមជ្រើសរើសរូបថតច្បាស់ល្អ (JPG, PNG) ពីទូរស័ព្ទ ឬកុំព្យូទ័ររបស់អ្នក។</p>
+                    <input type="file" id="regPhotoInput" accept="image/*" onchange="previewStudentPhoto(event)" required class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100 cursor-pointer">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1.5">ឈ្មោះជាភាសាខ្មែរ </label>
+                    <input id="regNameKh" type="text" placeholder="" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 font-medium bg-slate-50/60 transition">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1.5">ឈ្មោះជាអក្សរឡាតាំង (English) *</label>
+                    <input id="regNameEn" type="text" placeholder="" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 font-jakarta bg-slate-50/60 transition">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1.5">ភេទ (Gender)</label>
+                    <select id="regGender" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 bg-slate-50/60 transition cursor-pointer">
+                        <option value="ប្រុស"></option>
+                        <option value="ប្រុស">ប្រុស (Male)</option>
+                        <option value="ស្រី">ស្រី (Female)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1.5">លេខទូរស័ព្ទផ្ទាល់ខ្លួន </label>
+                    <input id="regPhone" type="tel" placeholder="" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 font-jakarta bg-slate-50/60 transition">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1.5">អ៊ីមែល (Email)</label>
+                    <input id="regEmail" type="email" placeholder="student@gmail.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 font-jakarta bg-slate-50/60 transition">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1.5">ជំនាញបច្ចេកទេស </label>
+                    <select id="regMajor" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 font-medium bg-slate-50/60 transition cursor-pointer">
+                        <option value=""></option>
+                        <option value="ព័ត៌មានវិទ្យា (IT)">ព័ត៌មានវិទ្យា (Information Technology)</option>
+                        <option value="វិស្វកម្មសំណង់ស៊ីវិល">វិស្វកម្មសំណង់ស៊ីវិល (Civil Engineering)</option>
+                        <option value="អគ្គិសនី និងអេឡិចត្រូនិក">អគ្គិសនី និងអេឡិចត្រូនិក (Electrical)</option>
+                        <option value="ស្ថាបត្យកម្ម">ស្ថាបត្យកម្ម (Architecture)</option>
+                        <option value="មេកានិច">មេកានិច (Mechanical Engineering)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1.5">កម្រិតសិក្សា</label>
+                    <select id="regLevel" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 bg-slate-50/60 transition cursor-pointer">
+                        <option value=""></option>
+                        <option value="បរិញ្ញាបត្រ">បរិញ្ញាបត្រ (Bachelor - 4 ឆ្នាំ)</option>
+                        <option value="បរិញ្ញាបត្ររង">បរិញ្ញាបត្ររង (Associate - 2 ឆ្នាំ)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1.5">ឆ្នាំសិក្សា</label>
+                    <select id="regYear" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 bg-slate-50/60 transition cursor-pointer">
+                        <option value=""></option>
+                        <option value="ឆ្នាំទី ១">ឆ្នាំទី ១ (Year 1)</option>
+                        <option value="ឆ្នាំទី ២">ឆ្នាំទី ២ (Year 2)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Payment Status Options -->
+            <!-- Payment Status Options -->
+            <div class="p-4 rounded-2xl bg-slate-50/90 border border-slate-200/80 space-y-2.5">
+                <label class="block font-bold text-slate-900">ស្ថានភាពបង់ប្រាក់សេវាចុះឈ្មោះ </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white cursor-pointer hover:border-slate-300 transition shadow-2xs has-[:checked]:border-emerald-500 has-[:checked]:bg-emerald-50/80 has-[:checked]:ring-2 has-[:checked]:ring-emerald-500/20 group">
+                        <input type="radio" name="paymentChoice" value="បានបង់ប្រាក់រួច" required class="peer w-4 h-4 accent-emerald-600">
+                        <div>
+                            <span class="font-bold text-slate-600 peer-checked:text-emerald-700 group-has-[:checked]:text-emerald-700 block transition-colors">🟢 បានបង់ប្រាក់រួច</span>
+                            <span class="text-[10px] text-slate-400">បង់តាម ABA / ACLEDA រួច</span>
+                        </div>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white cursor-pointer hover:border-slate-300 transition shadow-2xs has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50/80 has-[:checked]:ring-2 has-[:checked]:ring-amber-500/20 group">
+                        <input type="radio" name="paymentChoice" value="មិនទាន់បង់" required class="peer w-4 h-4 accent-amber-500">
+                        <div>
+                            <span class="font-bold text-slate-600 peer-checked:text-amber-700 group-has-[:checked]:text-amber-700 block transition-colors">🟡 មិនទាន់បង់</span>
+                            <span class="text-[10px] text-slate-400">បង់ពេលមកដល់សាលាផ្ទាល់</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="pt-2">
+                <button type="submit" id="submitBtn" class="btn-shimmer w-full py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 active:scale-98 text-white font-bold text-sm shadow-lg shadow-emerald-500/30 transition flex items-center justify-center gap-2 cursor-pointer">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>បញ្ជូនពាក្យចុះឈ្មោះ (Submit Application)</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
+                <i data-lucide="check-circle" class="w-8 h-8"></i>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-slate-900">ចុះឈ្មោះជោគជ័យ!</h3>
+                <p id="successRegCode" class="text-xs font-jakarta font-bold text-emerald-600 mt-1">អត្តលេខ: NTTI-2026-011</p>
+                <p class="text-xs text-slate-500 mt-2">ទិន្នន័យត្រូវបានបញ្ជូនចូលទៅក្នុងប្រព័ន្ធគ្រប់គ្រង NTTI Admin Dashboard ដោយស្វ័យប្រវត្តិ!</p>
+            </div>
+            <div>
+                <button onclick="closeSuccessModal()" class="w-full py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition cursor-pointer">
+                    បន្តចុះឈ្មោះថ្មី
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Shared Cloud Endpoint for syncing between separate HTML apps
+        const CLOUD_DB_URL = 'https://jsonblob.com/api/jsonBlob/01933f18-7b2a-7c90-9f1a-8e4d3b2c1a01';
+
+        let uploadedPhotoBase64 = 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80';
+
+        // Preview Image when user selects file from phone/PC
+        function previewStudentPhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedPhotoBase64 = e.target.result;
+                    document.getElementById('photoPreviewBox').style.backgroundImage = `url('${uploadedPhotoBase64}')`;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function fetchWithTimeout(url, options = {}, timeoutMs = 3500) {
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), timeoutMs);
+            try {
+                const response = await fetch(url, { ...options, signal: controller.signal });
+                clearTimeout(timer);
+                return response;
+            } catch (err) {
+                clearTimeout(timer);
+                throw err;
+            }
+        }
+
+        async function submitStudentRegistration(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerHTML = `<span class="animate-spin inline-block mr-1">⏳</span> កំពុងបញ្ជូនរូបថត និងទិន្នន័យ...`;
+
+            const nameKh = document.getElementById('regNameKh').value.trim();
+            const nameEn = document.getElementById('regNameEn').value.trim();
+            const gender = document.getElementById('regGender').value;
+            const phone = document.getElementById('regPhone').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const major = document.getElementById('regMajor').value;
+            const level = document.getElementById('regLevel').value;
+            const year = document.getElementById('regYear').value;
+            const paymentStatus = document.querySelector('input[name="paymentChoice"]:checked').value;
+
+            // Use the uploaded photo or fallback based on gender
+            const studentAvatar = uploadedPhotoBase64 || (gender === 'ស្រី'
+                ? 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80'
+                : 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80');
+
+            // Generate Random ID like original code
+            const newId = `NTTI-2026-${String(Math.floor(100 + Math.random() * 900))}`;
+
+            const newStudent = {
+                id: newId,
+                nameKh: nameKh,
+                nameEn: nameEn,
+                gender: gender,
+                major: major,
+                level: level,
+                year: year,
+                phone: phone,
+                email: email || 'student@ntti.edu.kh',
+                paymentStatus: paymentStatus,
+                status: 'កំពុងសិក្សា',
+                gpa: 3.75,
+                attendanceRate: 100,
+                todayAttendance: 'Present',
+                avatar: studentAvatar,
+                registeredAt: new Date().toISOString()
+            };
+
+            // Retrieve existing list from localStorage
+            let existingStudents = JSON.parse(localStorage.getItem('ntti_students_db')) || [];
+
+            // 1. Save immediately to LocalStorage
+            existingStudents.unshift(newStudent);
+            localStorage.setItem('ntti_students_db', JSON.stringify(existingStudents));
+
+            // 2. Sync to Cloud Server (so Admin sees it instantly)
+            try {
+                let cloudList = [];
+                const getRes = await fetchWithTimeout(CLOUD_DB_URL, {}, 3500);
+                if (getRes.ok) {
+                    const data = await getRes.json();
+                    if (Array.isArray(data)) cloudList = data;
+                }
+                cloudList.unshift(newStudent);
+                await fetchWithTimeout(CLOUD_DB_URL, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(cloudList)
+                }, 3500);
+            } catch (err) {
+                console.warn('Cloud sync skipped:', err);
+            }
+
+            // Reset Button & Show Success Modal
+            btn.disabled = false;
+            btn.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i><span>បញ្ជូនពាក្យចុះឈ្មោះ (Submit Application)</span>`;
+            lucide.createIcons();
+
+            document.getElementById('successRegCode').textContent = `អត្តលេខរបស់អ្នក: ${newId}`;
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('successModal').classList.add('flex');
+            e.target.reset();
+            document.getElementById('photoPreviewBox').style.backgroundImage = `url('https://placehold.co/150x150/0f4c5c/ffffff?text=Photo')`;
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+            document.getElementById('successModal').classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
